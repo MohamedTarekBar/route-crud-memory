@@ -18,7 +18,7 @@ const createUser = async (req, res, next) => {
 const showUser = async (req, res, next) => {
     try {
         const user = model.getUserById(res.locals.id);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'retrive user successfully',
             data: user,
@@ -30,7 +30,7 @@ const showUser = async (req, res, next) => {
 const indexUsers = async (req, res, next) => {
     try {
         const users = model.indexUsers();
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'indexed all users successfully',
             data: users,
@@ -43,7 +43,7 @@ const indexUsers = async (req, res, next) => {
 const indexUsersSorted = async (req, res, next) => {
     try {
         const users = model.indexUsersSorted();
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'indexed all users sorted alph.. successfully',
             data: users,
@@ -56,7 +56,7 @@ const indexUsersSorted = async (req, res, next) => {
 const updateUser = async (req, res, next) => {
     try {
         const user = model.updateUser(res.locals.user);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'updateed user successfully',
             data: user,
@@ -69,7 +69,7 @@ const updateUser = async (req, res, next) => {
 const deleteUser = async (req, res, next) => {
     try {
         const user = model.deleteUser(res.locals.id);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'deleted user successfully',
             data: user,

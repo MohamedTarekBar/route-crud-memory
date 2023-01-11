@@ -18,7 +18,7 @@ const createPost = async (req, res, next) => {
 const showPost = async (req, res, next) => {
     try {
         const post = model.getPostById(res.locals.id);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'retrive Post successfully',
             data: post,
@@ -30,7 +30,7 @@ const showPost = async (req, res, next) => {
 const indexPosts = async (req, res, next) => {
     try {
         const posts = model.indexPosts();
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'indexed all Posts successfully',
             data: posts,
@@ -43,7 +43,7 @@ const indexPosts = async (req, res, next) => {
 const indexPostsReversed = async (req, res, next) => {
     try {
         const post = model.indexPostsReversed();
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'indexed all Posts reversed successfully',
             data: post,
@@ -56,7 +56,7 @@ const indexPostsReversed = async (req, res, next) => {
 const updatePost = async (req, res, next) => {
     try {
         const post = model.updatePost(res.locals.post);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'updateed Post successfully',
             data: post,
@@ -69,7 +69,7 @@ const updatePost = async (req, res, next) => {
 const deletePost = async (req, res, next) => {
     try {
         const post = model.deletePost(res.locals.id);
-        res.status(200).json({
+        return res.status(200).json({
             status: 200,
             message: 'deleted Post successfully',
             data: post,

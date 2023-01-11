@@ -69,7 +69,7 @@ class UserModel {
     getUserById = ({ id } = {}) => {
 
         const index = users.findIndex((user) => user.id == id);
-        console.log(users[0].id);
+        console.log(index);
         if (index != -1) {
             return users[index];
         } else {
